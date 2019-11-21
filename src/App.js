@@ -40,7 +40,7 @@ class App extends React.Component {
       <section className='container'>
         {isLoading ? (
           <div className='loader'>
-            <span className='loader__text'>Loading...</span>
+            <div className='loader__object'></div>
           </div>
         ) : (
           <div className='movies'>
@@ -48,12 +48,13 @@ class App extends React.Component {
               console.log(movie);
               return (
                 <Movie
-                  key={movie.id}
+                  // id={movie.id}
                   year={movie.year}
                   title={movie.title}
                   summary={movie.summary}
-                  poster={movie.large_cover_image}
+                  poster={movie.medium_cover_image}
                   rating={movie.rating}
+                  genres={movie.genres}
                 />
               );
             })}
